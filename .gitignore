@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Not including gzip data folder
+data/
+
 # C extensions
 *.so
 
