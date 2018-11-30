@@ -1,29 +1,19 @@
+# Digit Reconition script using a neural network through a MNIST dataset
+
 # Imports Used 
 import numpy as np
-import matplot.lib.pylot as plt
-import pandas as pd
-#import keras
-
+import matplotlib as plt
 import gzip
+import keras
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.optimizers import RMSprop
 
-with gzip.open('Data/t10k-images-idx3-ubyte.gz', 'rb') as f:
-    imgContent = f.read()
-	
-with gzip.open('Data/t10k-labels-idx1-ubyte.gz', 'rb') as f:
-    labelContent = f.read()	
-	
+batch_size = 128
+num_classes = 10
+test = 2
 
-with gzip.open('Data/train-images-idx3-ubyte.gz', 'rb') as f:
-    tImage = f.read()
-	
-
-with gzip.open('Data/train-labels-idx3-ubyte', 'rb') as f:
-    tLabel = f.read()
-	
-tImage = ~np.array(list(imgContent[16:])).reshap(60000, 28 ,28).astype(np,uint8) / 255.0
-
-tLabel = np.array(list(labelContent[8:])).astype(np.uint8)
-	
-
-
+# Takes in the mnist dataset 
+(x_Train, y_train), (x_test, y_test) = mnist.load_data()
 
