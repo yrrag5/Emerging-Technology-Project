@@ -2,14 +2,12 @@
 # ID - G00335806
 
 
-# Digit Reconition script using a neural network through a MNIST dataset
+# Digit Recognition script using a neural network through a MNIST dataset
 
-# Adapted from - https://github.com/keras-team/keras/blob/master/examples/mnist_mlp.py
 
 # Imports Used 
 import numpy as np
 import matplotlib as plt
-import gzip
 import keras
 from keras.datasets import mnist
 from keras.models import Sequential
